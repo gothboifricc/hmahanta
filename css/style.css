@@ -7,7 +7,7 @@ body {
   font-weight: 300;
   position: relative;
 }
-
+/* above code changes general body text format, changes in both blog and main page */
 body:before {
   content: "";
   position: absolute;
@@ -34,19 +34,19 @@ body.offcanvas:before {
 }
 
 body, .unslate_co--site-inner {
-  background: #000;
+  background: #000000;
 }
-
+/* himu, above code changes the background color of the site */
 ::-moz-selection {
-  background: #000;
+  background: #ff0f2f;
   color: #fff;
 }
-
+/* himu, above code changes the selected general text color formatting, specifically for mozilla firefox */
 ::selection {
-  background: #000;
+  background: #ff0f2f;
   color: #fff;
 }
-
+/* himu, above code changes the selected general text color formatting, works for most browsers */
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -106,7 +106,7 @@ a, a:hover {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-
+/* himu, code changes footer button formatting (hover and check)... */
 .btn.btn-outline-pill.btn-custom-light {
   color: #fff;
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -123,7 +123,7 @@ a, a:hover {
   background-color: #fff;
   color: #000;
 }
-
+/* ... till here but above 2 blocks of code no idea */
 #unslate_co--overlayer {
   width: 100%;
   height: 100%;
@@ -544,7 +544,7 @@ a, a:hover {
   position: fixed;
   z-index: 1009;
   height: 100vh;
-  background: #7700ffbe;
+  background: #ffffffd0;
   width: 280px;
   overflow: auto;
   padding-top: 30px;
@@ -754,7 +754,7 @@ a, a:hover {
     font-size: 3rem;
   }
 }
-
+/* himu, below code changes main heading format */
 .cover-v1 .blog-heading {
   font-weight: 900;
   color: #fff;
@@ -766,11 +766,11 @@ a, a:hover {
     font-size: 2rem;
   }
 }
-
+/* same as above but this for mobile devices */
 .cover-v1 .post-meta {
   font-size: 18px;
 }
-
+/* above code changes format of line below main heading, check blog page for changes*/
 .cover-v1 .subheading {
   font-size: 33px;
   color: #fff;
@@ -781,7 +781,7 @@ a, a:hover {
     font-size: 24px;
   }
 }
-
+/* above 2 code block changes format of line below main heading, check main page, 2nd block of code is for mobile devices */
 .mouse-wrap {
   position: relative;
   display: inline-block;
@@ -2095,4 +2095,32 @@ span.error {
 
 .gsap-reveal-img .reveal-wrap .reveal-content .portfolio-item-content h3 {
   margin-bottom: 10px;
+}
+
+/* CSS */
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;  /* Centers the content */
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 500;
+}
+
+p {
+  font-family: 'Georgia', serif;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #fff;
 }

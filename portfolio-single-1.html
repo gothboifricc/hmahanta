@@ -36,10 +36,15 @@
     <div class="site-mobile-inner"></div>
   </nav>
 
-  <div class="unslate_co--site-wrap">
-
-    <div class="unslate_co--site-inner">
-
+    <div class="unslate_co--site-wrap">
+        
+      <div class="unslate_co--site-inner">
+        <div class="lines-wrap">
+          <div class="lines-inner">
+            <div class="lines"></div>
+          </div>
+        </div>
+      <!--hm END vertical lines -->
       <nav class="unslate_co--site-nav site-nav-target">
 
         <div class="container">
@@ -94,13 +99,15 @@
       </nav>
       <!-- END nav -->
 
-      <div class="cover-v1 gradient-bottom-black jarallax">
+      <div class="cover-v1 jarallax overlay" style="background-image: url('images/pf1_bg.jpg');">
         <div class="container">
           <div class="row align-items-center">
 
             <div class="col-md-10 mx-auto text-center">
               <h1 class="heading" data-aos="fade-up">Census 2011 Analysis with Dashboard</h1>
-              <h2 class="subheading" data-aos="fade-up" data-aos-delay="100">An in-depth analysis of India Census 2011 covering key metrics like state/district-wise population, literacy etc.</h2>
+              <h2 class="subheading" data-aos="fade-up" data-aos-delay="100">An in-depth analysis of India Census 2011 covering key metrics associated with state, district-wise population, literacy etc.</h2>
+              <br>
+              <div class="post-meta" data-aos="fade-up" data-aos-delay="100">October 10, 2024</div>
             </div>
 
           </div>
@@ -115,6 +122,9 @@
         </a>
 
       </div>
+
+
+
       <!-- END .cover-v1 -->
 
       <div class="container">
@@ -122,60 +132,130 @@
 
           <div class="portfolio-single-inner">
             <h2 class="heading-portfolio-single-h2">Glance:</h2>
-
-            <div class="row justify-content-between mb-5">
-              <div class="col-12 mb-4">
-                <div class="owl-carousel single-slider">
-                  <figure class="mb-4">
-                    <img src="images/work_1_full.png" alt="Image" class="img-fluid">
-                  </figure>
-                  <figure class="mb-4">
-                    <img src="images/work_1_a_full.png" alt="Image" class="img-fluid">
-                  </figure>
-                  <figure class="mb-4">
-                    <img src="images/work_1_b_full.png" alt="Image" class="img-fluid">
-                  </figure>
-                  <figure class="mb-4">
-                    <img src="images/work_1_b_full.png" alt="Image" class="img-fluid">
-                  </figure>
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-md-11 col-lg-11 mx-auto"> <!-- Reduced column width and added mx-auto -->
+                  <div class="owl-carousel single-slider">
+                    <figure class="mb-1">
+                      <img src="images/work_1_full.png" alt="Image" class="img-fluid">
+                    </figure>
+                    <figure class="mb-1">
+                      <img src="images/work_1_a_full.png" alt="Image" class="img-fluid">
+                    </figure>
+                    <figure class="mb-1">
+                      <img src="images/work_1_b_full.png" alt="Image" class="img-fluid">
+                    </figure>
+                    <!-- other carousel items -->
+                  </div>
                 </div>
               </div>
-              <div class="col-12 mb-5">
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-3">
+            </div>
+
+                    <!-- This part was edited to make it bloglike -->
+      <div class="unslate_co--section" id="blog-single-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <h2 class="mb-4">Information</h2>
+              <p>A few weeks back, I successfully completed a project analysing the Census 2011 data. I used SQL, Excel, Power BI, Canva as tools to accomplish this.</p>
+              <p>Data is beautiful, as fellow data analysts would agree. India is a country with insane diversity, maybe the most diverse nation, so it is not surprising to say that it yields some very fascinating datasets. One such source is Census Data. Getting to analyse the diversity in its various forms at this depth is no doubt a gift of the 21st Century. A gift that we as Data Analysts should make the most of. So here I am trying to make sense of the wild rows, columns, and the data within them.</p>
+              <p><img src="images/pf1/sub.jpg" alt="Image" class="img-fluid"></p>
+              <p>I will be analysing the Census 2001 data as well as another project. In the end I will try to establish a relationship between the two as a standalone project to try and figure out key differences/connections between the two. Hopefully I will be able to derive some beautiful insights from there as well. Wish me luck, it might take some time as I am currently trying to learn web scraping using python libraries like BeautifulSoup/Selenium, and those are a bit difficult to wrap your head around as they get updated a lot frequently and tutorials are scarce.</p>
+              <br>
+              <p>Here are the key highlights of this project:</p><br>
+              <!-- <p><img src="images/work_1_full.jpg" alt="Image" class="img-fluid"></p> -->
+              <p>🔹Dynamic visuals representing age groups, population density, and more.<br>
+                <br>🔹User-friendly interface for easy exploration of data.<br>
+                <br>🔹Insights that can aid policymakers and researchers in understanding demographic shifts.</p>
+              <br>
+              <p>If you want to practice on this dataset and try to gather insights yourself, you can download it from this official website of the Government of India: </p>
+              <p><a href="https://censusindia.gov.in/census.website/">Download Dataset Here</a></p>
+              <br>
+              <h2 class="mb-4">Insights & Actions</h2>
+              <p>🔹Insight 1: State with highest literacy rate is Kerala (~84%) and lowest literacy rate is Bihar (~50%). This should help pinpoint areas with successful education initiatives and those requiring further development efforts.</p>
+              <!-- <p><img src="images/work_9_a_md.jpg" alt="Image" class="img-fluid"></p> -->
+              <!-- hm, use above line of code to add images to insights -->
+              <p>Suggested Actions:</p>
+              <p>1. States with high MPI HCR% (indicating higher poverty) often have lower literacy rates, this is due to limited access to education. Poverty reduction could improve education in these states.<br>2. Higher literacy rates are often seen in more urbanised areas due to better access to schools and education facilities (which is not the case in Bihar, with a rural pop). Comparing literacy rates to urban-rural household data from reveals that urbanisation should lead to better education outcomes.</p>
+              <br>
+
+              <p>🔹Insight 2: Haryana (879 females per 1000 males), Jammu & Kashmir (889 females per 1,000 males), and Sikkim (889 females per 1,000 males) has significant gender imbalances (low gender ratios in terms of females to males). The national average is 940 females per 1,000 males. Gender imbalances in these regions may indicate issues related to social policies or cultural practices.</p>
+              <p>Suggested Actions:</p>
+              <p>Targeted social campaigns or policy interventions in these states should help restore the gender imbalances near to ideal values.</p>
+              <br>
+
+              <p>🔹Insight 3: The Multidimensional Poverty Index (MPI) Headcount Ratio (HCR%) reveals the percentage of the population that is considered multidimensionally poor. I took the average of MPI % and HCR % to create a combined poverty score, MPI HCR%. Note that combining the two may dilute specific insights, however This gives a general poverty measure and treats both indices with equal importance. States like Bihar (~52%), Jharkhand (~45%), and Madhya Pradesh (~39%) show a high MPI HCR%.</p>
+              <p>Suggested Actions:</p>
+              <p>Strategies to reduce poverty that target sectors like health, education, and living standards should be implemented in these states.</p>
+              <br>
+
+              <p>🔹Insight 4: Delhi (11,321 people per sq. km.) and Chandigarh (9,259 people per sq. km.) show high population density. States with higher population densities often face challenges such as infrastructure strain, overcrowding, and environmental issues. <br><br>On the other hand, states with lower densities like Arunachal Pradesh (17 people per sq. km.) and Andaman & Nicobar Islands (47 people per sq. km.) may have underutilised resources.</p>
+              <p>Suggested Actions:</p>
+              <p>1. In high-density areas, expanding urban infrastructure, affordable housing, and healthcare facilities should be prioritised to reduce congestion and improve quality of life. Environmental controls and green spaces can also help manage pollution and support urban well-being.<br>2. In low-density areas, improving roads and internet access can help boost connectivity and service availability. Also, providing incentives for businesses, support for agriculture sector, and sustainable tourism can drive local economic growth while preserving the region's natural assets.</p>
+              <br>
+
+              <p>🔹Insight 5: States like Uttar Pradesh (~77% of total population), Bihar (~88%), and Assam (~84%) have the highest rural population in the country, while states like Tamil Nadu (~48%), Kerala (~48%), and Maharashtra (~45%) have high urban population.</p>
+              <p>Suggested Actions:</p>
+              <p>1. In states with high rural population more focus on rural development, infrastructure, and services is needed. <br>2. While states with high urban population should focus more on urban planning, transportation, and housing.</p>
+              <br>
+
+
+              <div class="pt-5 categories_tags ">
+                <p>Tools Used:  <a href="https://www.microsoft.com/en-us/power-platform/products/power-bi">Power BI</a>, <a href="https://www.microsoft.com/en-in/microsoft-365/excel">Excel</a>, <a href="https://www.canva.com/about/">Canva</a><br><br>  Tags: <a href="https://www.google.com/search?q=Data+Analytics&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWILesWntDwf6YqRHVROt0pIghFftYA%3A1730125603596&ei=I58fZ9v5I9iVseMP0oKQ8AM&ved=0ahUKEwibl5OQpLGJAxXYSmwGHVIBBD4Q4dUDCA8&uact=5&oq=Data+Analytics&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIg5EYXRhIEFuYWx5dGljczIKECMYgAQYJxiKBTILEAAYgAQYkQIYigUyDhAAGIAEGJECGLEDGIoFMg4QABiABBiRAhixAxiKBTILEAAYgAQYkQIYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyCBAAGIAEGLEDMgUQABiABEiGO1D6DViGOXABeAGQAQCYAbgCoAGQG6oBBjItMTQuMbgBA8gBAPgBAZgCDaACxBbCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICBxAAGIAEGArCAg0QABiABBixAxhDGIoFwgIKEAAYgAQYQxiKBcICCxAAGIAEGLEDGIoFwgIOEAAYgAQYsQMY8wUYiwPCAgsQABiABBixAxiLA8ICDhAAGIAEGLEDGIoFGIsDmAMAiAYBkAYKkgcIMS4wLjExLjGgB_ps&sclient=gws-wiz-serp">#datanalytics</a> <a href="https://www.google.com/search?q=Data+Science&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWIKXAtg9BF7Kxvige--PQhHG8l5wVQ%3A1730125592475&ei=GJ8fZ7ruG7aOseMP8cj48AU&ved=0ahUKEwi62uuKpLGJAxU2R2wGHXEkHl4Q4dUDCA8&uact=5&oq=Data+Science&gs_lp=Egxnd3Mtd2l6LXNlcnAiDERhdGEgU2NpZW5jZTIKECMYgAQYJxiKBTIKEAAYgAQYFBiHAjINEAAYgAQYsQMYQxiKBTIFEAAYgAQyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI_RhQAFicEHAAeAGQAQCYAcUCoAHDBqoBBTItMi4xuAEDyAEA-AEBmAICoAKeBJgDAJIHAzItMqAH3hU&sclient=gws-wiz-serp">#datascience</a></p>
+              </div>
+              <br>
+              <div class="post-single-navigation d-flex align-items-stretch">
+                <a href="portfolio-single-6.html" class="mr-auto w-50 pr-4">
+                  <span class="d-block">Previous Project</span>
+                  Sales Data Analysis with Dashboard
+                </a>
+                <!-- you can comment out the above part to make it not show that  -->
+                <a href="portfolio-single-2.html" class="ml-auto w-50 text-right pl-4">
+                  <span class="d-block">Next Project</span>
+                  Spotify Music Data Analysis
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Edited till here personally -->
+              <!-- <div class="col-12 mb-5">
+                <div class="row"> -->
+                  <!-- <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="detail-v1">
                       <span class="detail-label">Tools Used</span>
                       <span class="detail-val">SQL, Excel, Power BI, Canva</span>
                     </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-3">
+                  </div> -->
+                  <!-- <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="detail-v1">
                       <span class="detail-label">Role</span>
-                      <span class="detail-val"><a href="#">Identity</a>, <a href="#">Web Design</a></span>
+                      <span class="detail-val"><a href="#">Web Design</a></span>
                     </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-3">
+                  </div> -->
+                  <!-- <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="detail-v1">
                       <span class="detail-label">Tags</span>
                       <span class="detail-val">data, dataanalytics, datascience</span>
                     </div>
-                  </div>
-                  <div class="col-sm-6 col-md-6 col-lg-3">
+                  </div> -->
+                  <!-- <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="detail-v1">
                       <span class="detail-label">More info</span>
                       <span class="detail-val"><a href="#">https://github.com/gothboifricc/hmahanta/</a></span>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 pr-md-5">
+                  </div> -->
+                <!-- </div>
+              </div> -->
+              <!-- <div class="col-md-6 pr-md-5">
                 <p>A man goes to the doctor and says, "Doctor, I think I’m shrinking!"<br>
                   The doctor replies, "Well, you'll just have to be a little patient."</p>
               </div>
               <div class="col-md-6 pl-md-5">
                 <p>
                   Two mice fell into a bucket of cream. The first mouse gave up and drowned. The second mouse struggled so long that he eventually turned the cream into butter and walked out.</p>
-              </div>
+              </div> -->
             </div>
 
           </div>
