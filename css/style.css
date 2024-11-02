@@ -5,9 +5,13 @@ body {
   font-size: 16px;
   line-height: 30px;
   font-weight: 300;
+  overflow-x: hidden;
   position: relative;
+  width: 100%;
 }
 /* above code changes general body text format, changes in both blog and main page */
+/* last 3 lines inside body code disabled the horizontal scrolling */
+
 body:before {
   content: "";
   position: absolute;
