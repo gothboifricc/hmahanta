@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HM &mdash; Blog Posts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    
+    <meta name="description" content="">
+    <meta name="keywords" content="html, css, javascript, jquery">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="css/vendor/icomoon/style.css">
+    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/vendor/aos.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
+    
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
+
+    <nav class="unslate_co--site-mobile-menu">
+      <div class="close-wrap d-flex">
+        <a href="#" class="d-flex ml-auto js-menu-toggle">
+          <span class="close-label">Close</span>
+          <div class="close-times">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+          </div>
+        </a>
+      </div>
+      <div class="site-mobile-inner"></div>
+    </nav>
+
+
+    <div class="unslate_co--site-wrap">
+
+      <div class="unslate_co--site-inner">
+
+        <div class="lines-wrap">
+          <div class="lines-inner">
+            <div class="lines"></div>
+          </div>
+        </div>
+        <!-- END lines -->
+      
+      <nav class="unslate_co--site-nav site-nav-target">
+
+        <div class="container">
+        
+          <div class="row align-items-center justify-content-between text-left">
+            <div class="col-md-5 text-right">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li class="has-children">
+                  <a href="index.html#home-section" class="nav-link">Home</a>
+                  <!-- <ul class="dropdown">
+                    <li>
+                      <a href="index.html">Hero Image BG</a>
+                    </li>
+                    <li>
+                      <a href="index-video.html">Video BG</a>
+                    </li>
+                    <li>
+                      <a href="index-hero-slider.html">Hero Slider</a>
+                    </li>
+                    <li>
+                      <a href="index-sidebar-menu.html">Sidebar Menu</a>
+                    </li>
+                    <li>
+                      <a href="index-right-menu.html">Right Menu</a>
+                    </li>
+                  </ul> -->
+                  <!-- Compare above and below blocks of code -->
+                </li>
+                <li><a href="index.html#portfolio-section" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html#about-section" class="nav-link">About</a></li>
+                <!-- <li><a href="index.html#services-section" class="nav-link">Services</a></li> -->
+              </ul>
+            </div>
+            <div class="site-logo pos-absolute">
+              <a href="index.html" class="unslate_co--site-logo">Datahoot<br>Analytics<span>.</span></a>
+            </div>
+            <div class="col-md-5 text-right text-lg-left">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li><a href="index.html#skills-section" class="nav-link">Skills</a></li>
+                <!-- <li><a href="index.html#testimonial-section" class="nav-link">Testimonial</a></li> -->
+                <li><a href="index.html#journal-section" class="nav-link active">Posts</a></li>
+                <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+              </ul>
+
+              <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
+                <li><a href="#" class="js-menu-toggle">Menu</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+      </nav>
+      <!-- END nav -->
+
+      <div class="cover-v1 jarallax overlay" style="background-image: url('images/blogpages/mainbg.jpg');">
+        <div class="container">
+          <div class="row align-items-center">
+              
+            <div class="col-md-8 mx-auto text-center">
+              <h1 class="blog-heading" data-aos="fade-up" data-aos-delay="0">Cardinality of Relationships in Data Modeling</h1>
+              <div class="post-meta" data-aos="fade-up" data-aos-delay="100">Data Modeling &bullet; September 24, 2024</div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- dov -->
+        <a href="#blog-single-section" class="mouse-wrap smoothscroll">
+          <span class="mouse">
+            <span class="scroll"></span>
+          </span>
+          <span class="mouse-label">Scroll</span>
+        </a>
+
+      </div>
+      <!-- END .cover-v1 -->
+
+      <div class="unslate_co--section" id="blog-single-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-9">
+              <h3 class="mb-4">What is Cardinality?</h3>
+              <p>In the context of databases and Power BI, cardinality refers to the uniqueness of data values contained in a column. It describes the relationship between tables and the type of connection that exists between them.
+                <br><br>To be precise, it defines how the rows in one table (say Table A) are related to the rows in another table (say Table B) based on a specific column or columns.</p>
+                <br>
+              <h3 class="mb-4">Main types of Cardinality</h3>
+              <p>1. One-to-One (1:1):<br><br>
+                Each record in Table A is linked to one and only one record in Table B, and vice versa.
+                <br><br>Example: Each employee has one unique employee ID, and each employee ID corresponds to only one employee.
+                <br><br>2. One-to-Many (1:M):
+                <br><br>One record in Table A can be related to multiple records in Table B, but each record in Table B is linked to only one record in Table A.
+                <br><br>Example: One customer can have multiple orders, but each order is linked to only one customer.
+                <br><br>3. Many-to-One (M:1):
+                <br><br>This is just the reverse of One-to-Many. Multiple records in Table A can relate to one record in Table B.
+                <br><br>Example: Multiple employees may belong to one department, but each department can have many employees.
+                <br><br>4. Many-to-Many (M:M):
+                <br><br>Records in Table A can relate to multiple records in Table B, and vice versa.
+                <br><br>Example: Students can enroll in multiple courses, and each course can have multiple students.
+                </p><br>
+
+              <h3 class="mb-4">Why is it important?</h3>
+              <p>Some reasons why cardinality is important in data modeling are:<br>
+                <br>🔹For optimising performance (high cardinality tends to improve performance in search and join operations, while low cardinality might require more careful consideration to avoid performance bottlenecks, especially in large datasets)
+                <br><br>🔹For improving indexing and storage efficiency<br>
+                <br>🔹To make the data model more accurate<br>
+                <br>🔹To speed up data retrieval</p><br>
+
+              
+              <p>In conclusion, cardinality plays a vital role in managing relationships between tables by specifying how rows in one table relate to rows in another. This ensures that data aggregates, filters, and calculates correctly in visuals and reports. Proper understanding of cardinality (like one-to-many or many-to-many) enables Power BI to deliver accurate insights, optimise performance, and handle complex data models without redundancy or calculation errors.</p>
+
+              <p><em>Happy Learning!</em></p>
+              <!-- <div class="pt-5 categories_tags ">
+                <p>Categories:  <a href="#">WebScraping</a>, <a href="#">Data Analytics</a> , <a href="#">Data Science</a> 
+                  <br>Tags: <a href="#">#html</a>, <a href="#">#trends</a></p>
+              </div> -->
+
+              <div class="post-single-navigation d-flex align-items-stretch">
+                <a href="post7.html" class="mr-auto w-25 pr-4">
+                  <span class="d-block">Previous Post</span>
+                  Aggregate Functions vs. Window Functions
+                </a>
+                <a href="post9.html" class="ml-auto w-25 text-right pl-4">
+                  <span class="d-block">Next Post</span>
+                  CASE vs. IF-ELSE statements in SQL
+                </a>
+                <!-- change w- in class above to change hover width of link -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      </div> 
+
+      <footer class="unslate_co--footer unslate_co--section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              
+              <div class="footer-site-logo"><a href="#">HM<span>.</span></a></div>
+
+              <ul class="footer-site-social">
+                <li><a href="www.linkedin.com/in/jagjit-k-55b028256">LinkedIn</a></li>
+                <li><a href="https://github.com/gothboifricc">Github</a></li>
+              </ul>
+
+              <p class="site-copyright">
+                
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="icon-heart"
+                  aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      
+    </div>
+
+    <!-- Loader -->
+    <div id="unslate_co--overlayer"></div>
+    <div class="site-loader-wrap">
+      <div class="site-loader"></div>
+    </div>
+
+    <script src="js/scripts-dist.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HM &mdash; Blog Posts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    
+    <meta name="description" content="">
+    <meta name="keywords" content="html, css, javascript, jquery">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="css/vendor/icomoon/style.css">
+    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/vendor/aos.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
+    
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
+
+    <nav class="unslate_co--site-mobile-menu">
+      <div class="close-wrap d-flex">
+        <a href="#" class="d-flex ml-auto js-menu-toggle">
+          <span class="close-label">Close</span>
+          <div class="close-times">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+          </div>
+        </a>
+      </div>
+      <div class="site-mobile-inner"></div>
+    </nav>
+
+
+    <div class="unslate_co--site-wrap">
+
+      <div class="unslate_co--site-inner">
+
+        <div class="lines-wrap">
+          <div class="lines-inner">
+            <div class="lines"></div>
+          </div>
+        </div>
+        <!-- END lines -->
+      
+      <nav class="unslate_co--site-nav site-nav-target">
+
+        <div class="container">
+        
+          <div class="row align-items-center justify-content-between text-left">
+            <div class="col-md-5 text-right">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li class="has-children">
+                  <a href="index.html#home-section" class="nav-link">Home</a>
+                  <!-- <ul class="dropdown">
+                    <li>
+                      <a href="index.html">Hero Image BG</a>
+                    </li>
+                    <li>
+                      <a href="index-video.html">Video BG</a>
+                    </li>
+                    <li>
+                      <a href="index-hero-slider.html">Hero Slider</a>
+                    </li>
+                    <li>
+                      <a href="index-sidebar-menu.html">Sidebar Menu</a>
+                    </li>
+                    <li>
+                      <a href="index-right-menu.html">Right Menu</a>
+                    </li>
+                  </ul> -->
+                  <!-- Compare above and below blocks of code -->
+                </li>
+                <li><a href="index.html#portfolio-section" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html#about-section" class="nav-link">About</a></li>
+                <!-- <li><a href="index.html#services-section" class="nav-link">Services</a></li> -->
+              </ul>
+            </div>
+            <div class="site-logo pos-absolute">
+              <a href="index.html" class="unslate_co--site-logo">Datahoot<br>Analytics<span>.</span></a>
+            </div>
+            <div class="col-md-5 text-right text-lg-left">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li><a href="index.html#skills-section" class="nav-link">Skills</a></li>
+                <!-- <li><a href="index.html#testimonial-section" class="nav-link">Testimonial</a></li> -->
+                <li><a href="index.html#journal-section" class="nav-link active">Posts</a></li>
+                <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+              </ul>
+
+              <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
+                <li><a href="#" class="js-menu-toggle">Menu</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+      </nav>
+      <!-- END nav -->
+
+      <div class="cover-v1 jarallax overlay" style="background-image: url('images/blogpages/mainbg.jpg');">
+        <div class="container">
+          <div class="row align-items-center">
+              
+            <div class="col-md-8 mx-auto text-center">
+              <h1 class="blog-heading" data-aos="fade-up" data-aos-delay="0">CASE vs. IF-ELSE Statements</h1>
+              <div class="post-meta" data-aos="fade-up" data-aos-delay="100">SQL &bullet; September 18, 2024</div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- dov -->
+        <a href="#blog-single-section" class="mouse-wrap smoothscroll">
+          <span class="mouse">
+            <span class="scroll"></span>
+          </span>
+          <span class="mouse-label">Scroll</span>
+        </a>
+
+      </div>
+      <!-- END .cover-v1 -->
+
+      <div class="unslate_co--section" id="blog-single-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-9">
+              <h3 class="mb-4">What is CASE and IF-ELSE statement?</h3>
+              <p>The CASE statement in SQL is a conditional expression that allows us to perform different actions based on different conditions.</p>
+              <p>The 'IF-ELSE' statement is found in many programming languages, and it allows us to execute different blocks of code based on whether a specific condition is true or false.</p>
+              <h3 class="mb-4">The Difference</h3>
+              <p>SQL is designed to be a declarative language meaning it focuses more on WHAT data to retrieve, rather than HOW to retrieve it, so 'CASE' fits well into this.
+
+                <br><br>One major difference is that 'CASE' provides a clear and structured way to express conditional logic in comparison to 'IF-ELSE' within SQL queries, making them easier to read and maintain. 
+                </p>
+                <p>Here is an example to help illustrate the difference between the two: </p>
+
+              <h3 class="mb-4">Example</h3>
+              <p>Say, you are asked to write a query identifying the type of each record in the TRIANGLES table using its three side lengths and output one of the following statements for each record in the table:
+                <br><br>Equilateral (A=B=C): It's a triangle with sides of equal length.
+                <br>Isosceles (A=B≠C): It's a triangle with two sides of equal length.
+                <br>Scalene (A≠B≠C): It's a triangle with sides of differing lengths.
+                <br>Not a triangle (sum of any two sides is equal to or less than the third side): The given values of A, B, and C don't form a triangle.</p>
+                <p>🔹Using CASE Statement:<br><br>
+                  SELECT
+                  <br>CASE
+                  <br>WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+                  <br>WHEN A = B AND B = C THEN 'Equilateral'
+                  <br>WHEN A = B OR A = C OR B = C THEN 'Isosceles'
+                  <br>ELSE 'Scalene'
+                  <br>END
+                  <br>FROM triangles;</p>
+
+                <p>🔹Using IF ELSE statement instead:<br><br>
+                  SELECT 
+                  <br>IF (A + B <= C OR A + C <= B OR B + C <= A, 'Not A Triangle', 
+                  <br>IF (A = B AND B = C, 'Equilateral', 
+                  <br>IF (A = B OR A = C OR B = C, 'Isosceles', 'Scalene' 
+                  <br>)
+                  <br>)
+                  <br>)
+                  <br>FROM triangles;</p>
+
+              <h3 class="mb-4">Conclusion</h3>
+              <p>The above IF ELSE structure gets nested and complicated very quickly if more conditions are put in, making it harder to read and maintain.
+                <br>Clearly, CASE is better suited when working with SQL, especially for complex queries.</p>
+
+              <p><em>Happy Learning!</em></p>
+              <!-- <div class="pt-5 categories_tags ">
+                <p>Categories:  <a href="#">WebScraping</a>, <a href="#">Data Analytics</a> , <a href="#">Data Science</a> 
+                  <br>Tags: <a href="#">#html</a>, <a href="#">#trends</a></p>
+              </div> -->
+
+              <div class="post-single-navigation d-flex align-items-stretch">
+                <a href="post8.html" class="mr-auto w-25 pr-4">
+                  <span class="d-block">Previous Post</span>
+                  Cardinality of Relationships in Databases
+                </a>
+                <a href="post10.html" class="ml-auto w-25 text-right pl-4">
+                  <span class="d-block">Next Post</span>
+                  Purpose & Use of Delimiters in SQL
+                </a>
+                <!-- change w- in class above to change hover width of link -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      </div> 
+
+      <footer class="unslate_co--footer unslate_co--section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              
+              <div class="footer-site-logo"><a href="#">HM<span>.</span></a></div>
+
+              <ul class="footer-site-social">
+                <li><a href="www.linkedin.com/in/jagjit-k-55b028256">LinkedIn</a></li>
+                <li><a href="https://github.com/gothboifricc">Github</a></li>
+              </ul>
+              
+              <p class="site-copyright">
+                
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="icon-heart"
+                  aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      
+    </div>
+
+    <!-- Loader -->
+    <div id="unslate_co--overlayer"></div>
+    <div class="site-loader-wrap">
+      <div class="site-loader"></div>
+    </div>
+
+    <script src="js/scripts-dist.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
