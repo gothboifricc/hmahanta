@@ -247,6 +247,32 @@ var owlCarouselPlugin = function() {
 	   });
 	}
 
+	if ( $('.goofy-slider').length ) {
+
+		$('.goofy-slider').owlCarousel({
+			center: false,
+	    loop: true,
+	    stagePadding: 0,
+	    margin: 0,
+	    smartSpeed: 1000,
+	    autoplay: true,
+	    autoplayHoverPause: true,
+	    dots: false,
+	    nav: false,
+	    responsive:{
+		    400:{
+		      items: 2
+		    },
+		    768:{
+		    	items: 3
+		    },
+		    1000:{
+		    	items: 4
+		    }
+	    }
+	   });
+	}
+
 };
 
 var owlSingleSlider = function () {

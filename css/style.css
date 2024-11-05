@@ -94,6 +94,7 @@ a, a:hover {
 }
 
 .btn {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   border-radius: 30px;
   padding-top: 15px;
@@ -112,19 +113,19 @@ a, a:hover {
 }
 /* himu, code changes footer button formatting (hover and check)... */
 .btn.btn-outline-pill.btn-custom-light {
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #cacaca;
+  border: 2px solid rgba(214, 34, 64, 0.699);
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
 }
 
 .btn.btn-outline-pill.btn-custom-light:hover, .btn.btn-outline-pill.btn-custom-light:active, .btn.btn-outline-pill.btn-custom-light:focus {
-  border-color: #fff;
+  border-color: #dbdbdb;
 }
 
 .btn.btn-bg-white--hover:hover {
-  background-color: #fff;
+  background-color: #ffffff;
   color: #000;
 }
 /* ... till here but above 2 blocks of code no idea */
@@ -2127,4 +2128,39 @@ p {
   line-height: 1.5;
   margin-bottom: 1rem;
   color: #fff;
+}
+
+
+.ftco-footer-social li {
+  margin: 0 10px;
+}
+
+.ftco-footer-social li.normal-txt {
+  margin-right: 15px;
+}
+
+/* edit2 */
+.ftco-footer-social li {
+  margin: 0 10px;
+}
+
+.ftco-footer-social li.normal-txt {
+  margin-right: 15px;
+}
+
+.ftco-footer-social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #3a3a3a91;  /* dark grey color */
+  color: #ec1f26;         /* icon color */
+  transition: all 0.3s ease;
+}
+
+.ftco-footer-social li a:hover {
+  background: #666666;  /* slightly lighter grey for hover effect */
+  transform: translateY(-3px);
 }
