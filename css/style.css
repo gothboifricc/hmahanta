@@ -122,6 +122,7 @@ a, a:hover {
 
 .btn.btn-outline-pill.btn-custom-light:hover, .btn.btn-outline-pill.btn-custom-light:active, .btn.btn-outline-pill.btn-custom-light:focus {
   border-color: #dbdbdb;
+  transform: translateY(-3px);
 }
 
 .btn.btn-bg-white--hover:hover {
@@ -2024,7 +2025,7 @@ span.error {
 .gsap-reveal {
   position: relative;
   display: inline-block;
-  overflow: hidden;
+  overflow: visible;  /* changed from hidden to visible, prevents button from getting cropped on hover */
 }
 
 @media (max-width: 991.98px) {
@@ -2142,6 +2143,7 @@ p {
 /* edit2 */
 .ftco-footer-social li {
   margin: 0 10px;
+  overflow: visible;  /* this prevents the button on hover from getting cropped */
 }
 
 .ftco-footer-social li.normal-txt {
@@ -2163,4 +2165,5 @@ p {
 .ftco-footer-social li a:hover {
   background: #666666;  /* slightly lighter grey for hover effect */
   transform: translateY(-3px);
+
 }
