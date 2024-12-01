@@ -942,13 +942,13 @@ a, a:hover {
 }
 
 .portfolio-item {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .portfolio-item img {
-  -webkit-transition: .3s all ease;
+  -webkit-transition: .2s all ease;
   -o-transition: .3s all ease;
-  transition: .3s all ease;
+  transition: .2s all ease;
   position: relative;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);

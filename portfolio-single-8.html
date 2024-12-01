@@ -186,7 +186,7 @@
               <p>Exploratory Data Analysis or EDA is a process in data analysis where we explore and summarise a dataset to understand its main characteristics, detect patterns, and identify any issues like missing or inconsistent data. It’s an essential step before we start generating crucial insights.
                 </p>
                 <h5 class="mb-4">1.	First, we inspect the tables it contains</h5>
-                <p>To do this, we expand the Tables folder, but there is another way. SQL Server provides a set of built-in views called INFORMATION_SCHEMA that contain metadata about the database objects, such as tables, columns, indexes, and constraints. By querying these views, we can retrieve information about the structure and properties of the database.
+                <p>To do this, we expand the Tables folder, but there is another way. SQL Server provides views(these act like a table but do not store data, they help present data from underlying tables) called 'Information Schema' that contain metadata about the database objects, such as tables, columns, indexes, and constraints. By querying these views, we can retrieve information about the structure and properties of the database.
                 <br><br>So, we execute the query below to list all the tables in the database,</p>
                 <pre style="background: rgb(26, 25, 25); border-bottom-color: initial; border-bottom-style: initial; border-image: initial; border-left-color: initial; border-left-style: initial; border-radius: 10px; border-right-color: initial; border-right-style: initial; border-top-color: rgb(255, 239, 15); border-top-style: solid; border-width: 5px 0px 0px; color: #6dff8b; font-family: &quot;Courier New&quot;, Courier, monospace; font-stretch: inherit; font-variant-east-asian: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1.5em; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 12px; vertical-align: baseline;"><span style="font-size: 13px;">SELECT * <br>FROM AdventureWorks2022.INFORMATION_SCHEMA.TABLES;</span></pre>
                 <p>which returns,<br><br>
@@ -357,16 +357,53 @@
 
               <h5 class="mb-4">🔹Question 13: What is the average sales by customer?<br><br>Solution:</h5>
               <p>This can be answered with the help of the query below that uses the AVG() function in addition to some concepts used before.</p>
-              <pre style="background: rgb(26, 25, 25); border-bottom-color: initial; border-bottom-style: initial; border-image: initial; border-left-color: initial; border-left-style: initial; border-radius: 10px; border-right-color: initial; border-right-style: initial; border-top-color: rgb(255, 239, 15); border-top-style: solid; border-width: 5px 0px 0px; color: #6dff8b; font-family: &quot;Courier New&quot;, Courier, monospace; font-stretch: inherit; font-variant-east-asian: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1.5em; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 12px; vertical-align: baseline;"><span style="font-size: 13px;">WITH CTE1 AS (<br>   SELECT <br>      t1.Name AS [Name], <br>      t2.CID<br>   FROM (<br>      SELECT <br>         CONCAT(pp.FirstName, ' ', <br>         pp.LastName) AS [Name], <br>         sc.PersonID<br>      FROM Sales.Customer AS sc<br>      INNER JOIN Person.Person AS pp<br>         ON sc.PersonID = pp.BusinessEntityID<br>   ) AS t1<br>   INNER JOIN (<br>      SELECT <br>         DISTINCT SC.PersonID AS PID, <br>         SSOH.CustomerID AS CID<br>      FROM Sales.Customer AS SC<br>      INNER JOIN Sales.SalesOrderHeader AS SSOH<br>         ON SC.CustomerID = SSOH.CustomerID<br>   ) AS t2<br>   ON t1.PersonID = t2.PID<br>)<br>SELECT <br>   CTE1.[Name], <br>   t1.CustomerID, <br>   AVG(t1.SubTotal) AS [Average Sales]<br>FROM Sales.SalesOrderHeader AS t1<br>INNER JOIN CTE1<br>   ON t1.CustomerID = CTE1.CID<br>GROUP BY CTE1.[Name], t1.CustomerID<br>ORDER BY CTE1.[Name];</span></pre>
+              <pre style="background: rgb(26, 25, 25); border-bottom-color: initial; border-bottom-style: initial; border-image: initial; border-left-color: initial; border-left-style: initial; border-radius: 10px; border-right-color: initial; border-right-style: initial; border-top-color: rgb(255, 239, 15); border-top-style: solid; border-width: 5px 0px 0px; color: #6dff8b; font-family: &quot;Courier New&quot;, Courier, monospace; font-stretch: inherit; font-variant-east-asian: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1.5em; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 12px; vertical-align: baseline;"><span style="font-size: 13px;">WITH CTE1 AS (<br>   SELECT <br>      t1.Name AS [Name], <br>      t2.CID<br>   FROM (<br>      SELECT <br>         CONCAT(pp.FirstName, ' ', <br>         pp.LastName) AS [Name], <br>         sc.PersonID<br>      FROM Sales.Customer AS sc<br>      INNER JOIN Person.Person AS pp<br>         ON sc.PersonID = pp.BusinessEntityID<br>   ) AS t1<br>   INNER JOIN (<br>      SELECT <br>         DISTINCT SC.PersonID AS PID, <br>         SSOH.CustomerID AS CID<br>      FROM Sales.Customer AS SC<br>      INNER JOIN Sales.SalesOrderHeader AS SSOH<br>         ON SC.CustomerID = SSOH.CustomerID<br>   ) AS t2<br>   ON t1.PersonID = t2.PID<br>)<br>SELECT <br>   CTE1.[Name], <br>   t1.CustomerID, <br>   AVG(t1.SubTotal) AS [Average Sales]<br>FROM Sales.SalesOrderHeader AS t1<br>INNER JOIN CTE1<br>   ON t1.CustomerID = CTE1.CID<br>GROUP BY CTE1.[Name], t1.CustomerID<br>ORDER BY CTE1.[Name];</span></pre><style>
+                /* For WebKit browsers (Chrome, Edge, Safari) */
+                pre::-webkit-scrollbar {
+                  width: 10px; /* Scrollbar width */
+                }
+                
+                pre::-webkit-scrollbar-track {
+                  background: #1a1a1a; /* Track color */
+                  border-radius: 10px; /* Optional: rounded edges */
+                }
+                
+                pre::-webkit-scrollbar-thumb {
+                  background: rgb(255, 239, 15); /* Thumb color */
+                  border-radius: 10px; /* Optional: rounded edges */
+                }
+                
+                pre::-webkit-scrollbar-thumb:hover {
+                  background: rgb(255, 15, 15) !important; /* Thumb color on hover */
+                }
+                
+                /* Optional for Firefox (limited styling) */
+                pre {
+                  scrollbar-color: rgb(255, 239, 15) #1a1a1a; /* Thumb and track colors */
+                  scrollbar-width: thin; /* Thin scrollbar */
+                }
+                </style>
+
+
               <h5>Result:</h5>
               <br><img src="images/pf8/xix.png" alt="Image" class="img-fluid"><br><br>
               <p>The average sales by customer is as listed above.</p>
+
+              <br><h2 class="mb-4">Conclusion</h2><br>
+              <p>This project demonstrated the power of SQL for performing complex data analysis and calculations. By 
+                using concepts such as WITH clauses, Common Table Expressions (CTEs), Window Functions, Aggregation with
+                 GROUP BY, Conditional logic using CASE statements, Nested Subqueries, challenges of interacting with
+                  data between unrelated tables can be successfully tackled and important questions can be answered. 
+                  Debugging errors further highlighted the importance of understanding grouping rules and ensuring proper 
+                  query structure. Overall, this project helped me understand the versatility of SQL in addressing
+                   real-world analytical needs efficiently and accurately.
+                  <br><br> I would like to add that it is possible to gather even more insights from this dataset, like we can display the total order quantity by year, this can be done by combining the query in question 4 with a part of the query used in question 7. If similar insights are required please contact me using the contact me form in the home page of this portfolio and I would be glad to oblige. </p>
               
               
               
               
               <div class="pt-5 categories_tags ">
-                <p>Tools Used:  <a href="https://learn.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver16">SQL Server Management Studio (SSMS)</a>, <a href="https://www.canva.com/about/">Canva</a><br><br>  Tags: <a href="https://www.google.com/search?q=Data+Analytics&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWILesWntDwf6YqRHVROt0pIghFftYA%3A1730125603596&ei=I58fZ9v5I9iVseMP0oKQ8AM&ved=0ahUKEwibl5OQpLGJAxXYSmwGHVIBBD4Q4dUDCA8&uact=5&oq=Data+Analytics&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIg5EYXRhIEFuYWx5dGljczIKECMYgAQYJxiKBTILEAAYgAQYkQIYigUyDhAAGIAEGJECGLEDGIoFMg4QABiABBiRAhixAxiKBTILEAAYgAQYkQIYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyCBAAGIAEGLEDMgUQABiABEiGO1D6DViGOXABeAGQAQCYAbgCoAGQG6oBBjItMTQuMbgBA8gBAPgBAZgCDaACxBbCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICBxAAGIAEGArCAg0QABiABBixAxhDGIoFwgIKEAAYgAQYQxiKBcICCxAAGIAEGLEDGIoFwgIOEAAYgAQYsQMY8wUYiwPCAgsQABiABBixAxiLA8ICDhAAGIAEGLEDGIoFGIsDmAMAiAYBkAYKkgcIMS4wLjExLjGgB_ps&sclient=gws-wiz-serp">#dataanalytics</a> <a href="https://www.google.com/search?q=Data+Science&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWIKXAtg9BF7Kxvige--PQhHG8l5wVQ%3A1730125592475&ei=GJ8fZ7ruG7aOseMP8cj48AU&ved=0ahUKEwi62uuKpLGJAxU2R2wGHXEkHl4Q4dUDCA8&uact=5&oq=Data+Science&gs_lp=Egxnd3Mtd2l6LXNlcnAiDERhdGEgU2NpZW5jZTIKECMYgAQYJxiKBTIKEAAYgAQYFBiHAjINEAAYgAQYsQMYQxiKBTIFEAAYgAQyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI_RhQAFicEHAAeAGQAQCYAcUCoAHDBqoBBTItMi4xuAEDyAEA-AEBmAICoAKeBJgDAJIHAzItMqAH3hU&sclient=gws-wiz-serp">#datascience</a></p>
+                <p>Tools Used:  <a href="https://learn.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms?view=sql-server-ver16">SQL Server Management Studio (SSMS),</a> <a href="https://www.canva.com/about/">Canva</a><br><br>  Tags: <a href="https://www.google.com/search?q=Data+Analytics&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWILesWntDwf6YqRHVROt0pIghFftYA%3A1730125603596&ei=I58fZ9v5I9iVseMP0oKQ8AM&ved=0ahUKEwibl5OQpLGJAxXYSmwGHVIBBD4Q4dUDCA8&uact=5&oq=Data+Analytics&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIg5EYXRhIEFuYWx5dGljczIKECMYgAQYJxiKBTILEAAYgAQYkQIYigUyDhAAGIAEGJECGLEDGIoFMg4QABiABBiRAhixAxiKBTILEAAYgAQYkQIYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyCBAAGIAEGLEDMgUQABiABEiGO1D6DViGOXABeAGQAQCYAbgCoAGQG6oBBjItMTQuMbgBA8gBAPgBAZgCDaACxBbCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICBxAAGIAEGArCAg0QABiABBixAxhDGIoFwgIKEAAYgAQYQxiKBcICCxAAGIAEGLEDGIoFwgIOEAAYgAQYsQMY8wUYiwPCAgsQABiABBixAxiLA8ICDhAAGIAEGLEDGIoFGIsDmAMAiAYBkAYKkgcIMS4wLjExLjGgB_ps&sclient=gws-wiz-serp">#dataanalytics</a> <a href="https://www.google.com/search?q=Data+Science&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWIKXAtg9BF7Kxvige--PQhHG8l5wVQ%3A1730125592475&ei=GJ8fZ7ruG7aOseMP8cj48AU&ved=0ahUKEwi62uuKpLGJAxU2R2wGHXEkHl4Q4dUDCA8&uact=5&oq=Data+Science&gs_lp=Egxnd3Mtd2l6LXNlcnAiDERhdGEgU2NpZW5jZTIKECMYgAQYJxiKBTIKEAAYgAQYFBiHAjINEAAYgAQYsQMYQxiKBTIFEAAYgAQyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI_RhQAFicEHAAeAGQAQCYAcUCoAHDBqoBBTItMi4xuAEDyAEA-AEBmAICoAKeBJgDAJIHAzItMqAH3hU&sclient=gws-wiz-serp">#datascience</a></p>
               </div>
               <br>
               <div class="post-single-navigation d-flex align-items-stretch">
