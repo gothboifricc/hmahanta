@@ -91,7 +91,7 @@ var siteIstotope = function() {
 					triggerElement: this,
 					duration: "0%",
 					reverse: false,
-					offset: "-300%",
+					offset: "-400%",
 				})
 				.setTween(tl2)
 				.addTo(controller);
@@ -652,7 +652,7 @@ var animateReveal = function() {
 				triggerElement: this,
 				duration: "0%",
 				reverse: false,
-				offset: "-300%",
+				offset: "-400%",
 			})
 			.setTween(tl)
 			.addTo(controller);
@@ -691,7 +691,7 @@ var animateReveal = function() {
 				triggerElement: this,
 				duration: "0%",
 				reverse: false,
-				offset: "-300%",
+				offset: "-400%",
 			})
 			.setTween(tl2)
 			.addTo(controller);
