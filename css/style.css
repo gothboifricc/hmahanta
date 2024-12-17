@@ -2009,8 +2009,8 @@ span.error {
   margin-left: -570px;
   top: 0;
   height: 100%;
-  border-left: 1px solid rgba(34, 34, 34, 0.6) !important;
-  border-right: 1px solid rgba(34, 34, 34, 0.6) !important;
+  border-left: 1px solid rgba(34, 34, 34, 0.8) !important;
+  border-right: 1px solid rgba(34, 34, 34, 0.8) !important;
 }
 
 .lines-wrap .lines-inner .lines {
@@ -2018,8 +2018,8 @@ span.error {
   left: 33.333333%;
   right: 33.333333%;
   height: 100%;
-  border-left: 1px solid rgba(34, 34, 34, 0.4) !important; /* Emon this changes vertical lines color in background of every page */
-  border-right: 1px solid rgba(34, 34, 34, 0.4) !important;
+  border-left: 1px solid rgba(34, 34, 34, 0.6) !important; /* Emon this changes vertical lines color in background of every page */
+  border-right: 1px solid rgba(34, 34, 34, 0.6) !important;
 }
 
 .gsap-reveal {
