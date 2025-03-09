@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarudoMail - Apply with Ease</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(0deg, #000000 0%, #292929 100%);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        
+        .wrapper {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            text-transform: none;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+        
+        .description {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 
+                         0 0 20px rgba(255, 0, 255, 0.6), 
+                         0 0 30px rgba(255, 0, 255, 0.4);
+            margin-bottom: 30px;
+        }
+        
+        .nav-links {
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .nav-item {
+            color: #00d9ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-item:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            color: #fff;
+        }
+        
+        .nav-item:hover:after {
+            width: 100%;
+        }
+        
+        .content-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .content-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .carousel-section {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            height: 530px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 10px rgb(147, 0, 160));
+        }
+        
+        .carousel-track {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-image {
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+        }
+        
+        .info-section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px #e100ff80;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, #cf00e2, transparent);
+        }
+        
+        /* Fix for Product Preview header underline */
+        .preview-header:after {
+            width: 30%;
+            left: 36%; /* Center the underline by moving it right */
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        footer.visible {
+            opacity: 1;
+        }
+        
+        /* Electric Line Effect */
+        .electric-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .electric-line {
+            position: absolute;
+            width: 2px;
+            height: 150vh;
+            background: rgba(174, 0, 255, 0.2);
+            box-shadow: 0 0 20px rgba(174, 0, 255, 0.7), 0 0 40px rgba(174, 0, 255, 0.1);
+            filter: blur(1px);
+            animation: flicker 2s infinite alternate ease-in-out, moveLines 6s infinite linear;
+        }
+
+        /* Flickering Effect */
+        @keyframes flicker {
+            0% { opacity: 0.3; transform: scaleY(0.9); }
+            100% { opacity: 1; transform: scaleY(1.1); }
+        }
+
+        /* Moving the Lines Slightly Up and Down */
+        @keyframes moveLines {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(10px); }
+        }
+        
+        .mouse-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .scroll {
+            width: 4px;
+            height: 8px;
+            background: white;
+            border-radius: 2px;
+            animation: scrollDown 1.5s infinite ease-in-out;
+        }
+        
+        @keyframes scrollDown {
+            0% { transform: translateY(-4px); opacity: 1; }
+            50% { transform: translateY(4px); opacity: 0.5; }
+            100% { transform: translateY(-4px); opacity: 1; }
+        }
+        
+        .mouse-label {
+            margin-top: 5px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #cf00e2, #00d9ff);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(207, 0, 226, 0.4);
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: '✓';
+            color: #00d9ff;
+            position: absolute;
+            left: 0;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .preview-header {
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .carousel-counter {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .counter-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .counter-dot.active {
+            background-color: #00d9ff;
+            box-shadow: 0 0 8px #00d9ff;
+        }
+        
+        .carousel-section-container {
+            position: relative;
+            margin-bottom: 35px;
+        }
+        
+        .image-info {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="electric-lines">
+        <div class="electric-line" style="left: 10%;"></div>
+        <div class="electric-line" style="left: 30%;"></div>
+        <div class="electric-line" style="left: 70%;"></div>
+        <div class="electric-line" style="left: 90%;"></div>
+    </div>
+    
+    <div class="wrapper">
+        <h1 class="title">
+            <span style="color: #cf00e2;">Garudo</span><span style="color: #FFFFFF;">Mail</span>
+        </h1>
+        <p class="description">Job Applications Made Easy</p>
+        <a class="mouse-wrap smoothscroll">
+          <span class="mouse">
+            <span class="scroll"></span>
+          </span>
+          <span class="mouse-label">Scroll</span>
+        </a>
+    </div>
+    
+    <div class="content-container">
+        <h2 class="section-title preview-header">Product Preview</h2>
+        
+        <div class="carousel-section-container">
+            <section class="carousel-section">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <img src="images/pf11/1.jpg" alt="GarudoMail interface showing job application dashboard" class="carousel-image active">
+                        <img src="images/pf11/2.jpg" alt="GarudoMail resume tailoring feature" class="carousel-image">
+                        <img src="images/pf11/3.jpg" alt="GarudoMail application tracking screen" class="carousel-image">
+                    </div>
+                </div>
+                <div class="carousel-counter">
+                    <span class="counter-dot active" data-index="0"></span>
+                    <span class="counter-dot" data-index="1"></span>
+                    <span class="counter-dot" data-index="2"></span>
+                </div>
+            </section>
+            <p class="image-info">Swipe through to see all features of the GarudoMail application</p>
+        </div>
+        
+        <section class="info-section">
+            <h2 class="section-title">Apply From the Comfort of your Couch</h2>
+            <p>Gone are the days of tedious job applications. With GarudoMail, you can send email applications to any job with just recruiter's email.</p>
+            <p>Stay ahead with our seamless, one-click application system with one-time payment.</p>
+            <p>4.99 USD | 199 INR --- 3 Custom Templates, Lifetime Validity</p>
+            <p>8.99 USD | 499 INR --- 5 Custom Templates, Custom Wallpaper, Set Application Status, Lifetime Validity</p>
+            <div class="button-container">
+                <a href="#" class="btn">Buy Now</a>
+                <a href="index.html" class="btn">Home</a>
+            </div>
+        </section>
+        
+        <section class="info-section">
+            <h2 class="section-title">How It Works</h2>
+            <ul class="feature-list">
+                <li>Message us to get your app tailored specifically for your needs</li>
+                <li>Enter recruiter's email into GarudoMail app</li>
+                <li>Select from a list of templates</li>
+                <li>(Optional) Change attachment</li>
+                <li>Hit Send, DONE!</li>
+                <li>Tracks history for accountability</li>
+            </ul>
+            <div class="button-container">
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 GarudoMail. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".carousel-image");
+            const dots = document.querySelectorAll(".counter-dot");
+            const content = document.querySelector(".content-container");
+            const footer = document.querySelector("footer");
+            let index = 0;
+
+            // Initialize carousel
+            images.forEach((img, i) => {
+                img.style.opacity = i === 0 ? "1" : "0";
+            });
+
+            function moveCarousel() {
+                // Fade out current image
+                images[index].style.opacity = "0";
+                dots[index].classList.remove("active");
+                
+                // Update index and fade in next image
+                index = (index + 1) % images.length;
+                images[index].style.opacity = "1";
+                dots[index].classList.add("active");
+            }
+
+            setInterval(moveCarousel, 3000);
+            
+            // Add click functionality to dots
+            dots.forEach((dot, i) => {
+                dot.addEventListener("click", function() {
+                    // Fade out current image
+                    images[index].style.opacity = "0";
+                    dots[index].classList.remove("active");
+                    
+                    // Update index to clicked dot and fade in that image
+                    index = i;
+                    images[index].style.opacity = "1";
+                    dots[index].classList.add("active");
+                });
+            });
+            
+            // Scroll reveal functionality
+            function revealOnScroll() {
+                const scrollPosition = window.scrollY;
+                const triggerPoint = window.innerHeight / 1.5;
+                
+                const contentPosition = content.getBoundingClientRect().top + scrollPosition;
+                const footerPosition = footer.getBoundingClientRect().top + scrollPosition;
+                
+                if (scrollPosition > contentPosition - triggerPoint) {
+                    content.classList.add("visible");
+                }
+                
+                if (scrollPosition > footerPosition - triggerPoint) {
+                    footer.classList.add("visible");
+                }
+            }
+            
+            // Initial check on page load
+            revealOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', revealOnScroll);
+            
+            // Smooth scroll functionality
+            document.querySelector('.mouse-wrap').addEventListener('click', function() {
+                window.scrollTo({
+                    top: document.querySelector('.content-container').offsetTop - 50,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

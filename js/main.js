@@ -701,4 +701,3 @@ var animateReveal = function() {
 	}
 
 }
-
