@@ -197,6 +197,7 @@
             box-shadow: 0 0 20px rgba(174, 0, 255, 0.7), 0 0 40px rgba(174, 0, 255, 0.1);
             filter: blur(1px);
             animation: flicker 2s infinite alternate ease-in-out, moveLines 6s infinite linear;
+            will-change: opacity, transform;
         }
 
         /* Flickering Effect */
@@ -240,6 +241,7 @@
             background: white;
             border-radius: 2px;
             animation: scrollDown 1.5s infinite ease-in-out;
+            will-change: transform, opacity; /* Add this line */
         }
         
         @keyframes scrollDown {
@@ -415,7 +417,7 @@
     </footer>
     
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        window.addEventListener('load', function() {
             const images = document.querySelectorAll(".carousel-image");
             const dots = document.querySelectorAll(".counter-dot");
             const content = document.querySelector(".content-container");
