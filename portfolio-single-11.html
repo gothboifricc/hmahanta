@@ -189,6 +189,7 @@
             overflow: hidden;
         }
 
+        /* Electric Lines Animation */
         .electric-line {
             position: absolute;
             width: 2px;
@@ -196,17 +197,50 @@
             background: rgba(174, 0, 255, 0.2);
             box-shadow: 0 0 20px rgba(174, 0, 255, 0.7), 0 0 40px rgba(174, 0, 255, 0.1);
             filter: blur(1px);
+            
+            /* Add all vendor prefixes */
+            -webkit-animation: flicker 2s infinite alternate ease-in-out, moveLines 6s infinite linear;
+            -moz-animation: flicker 2s infinite alternate ease-in-out, moveLines 6s infinite linear;
+            -o-animation: flicker 2s infinite alternate ease-in-out, moveLines 6s infinite linear;
             animation: flicker 2s infinite alternate ease-in-out, moveLines 6s infinite linear;
-            will-change: opacity, transform;
+            
+            /* Add transform properties with prefixes */
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
         }
-
-        /* Flickering Effect */
+        
+        /* Add prefixed keyframes */
+        @-webkit-keyframes flicker {
+            0% { opacity: 0.3; -webkit-transform: scaleY(0.9); }
+            100% { opacity: 1; -webkit-transform: scaleY(1.1); }
+        }
+        @-moz-keyframes flicker {
+            0% { opacity: 0.3; -moz-transform: scaleY(0.9); }
+            100% { opacity: 1; -moz-transform: scaleY(1.1); }
+        }
+        @-o-keyframes flicker {
+            0% { opacity: 0.3; -o-transform: scaleY(0.9); }
+            100% { opacity: 1; -o-transform: scaleY(1.1); }
+        }
         @keyframes flicker {
             0% { opacity: 0.3; transform: scaleY(0.9); }
             100% { opacity: 1; transform: scaleY(1.1); }
         }
-
-        /* Moving the Lines Slightly Up and Down */
+        
+        @-webkit-keyframes moveLines {
+            0% { -webkit-transform: translateY(-10px); }
+            100% { -webkit-transform: translateY(10px); }
+        }
+        @-moz-keyframes moveLines {
+            0% { -moz-transform: translateY(-10px); }
+            100% { -moz-transform: translateY(10px); }
+        }
+        @-o-keyframes moveLines {
+            0% { -o-transform: translateY(-10px); }
+            100% { -o-transform: translateY(10px); }
+        }
         @keyframes moveLines {
             0% { transform: translateY(-10px); }
             100% { transform: translateY(10px); }
@@ -235,15 +269,33 @@
             position: relative;
         }
         
+        /* Scroll Animation */
         .scroll {
             width: 4px;
             height: 8px;
             background: white;
             border-radius: 2px;
+            -webkit-animation: scrollDown 1.5s infinite ease-in-out;
+            -moz-animation: scrollDown 1.5s infinite ease-in-out;
+            -o-animation: scrollDown 1.5s infinite ease-in-out;
             animation: scrollDown 1.5s infinite ease-in-out;
-            will-change: transform, opacity; /* Add this line */
         }
         
+        @-webkit-keyframes scrollDown {
+            0% { -webkit-transform: translateY(-4px); opacity: 1; }
+            50% { -webkit-transform: translateY(4px); opacity: 0.5; }
+            100% { -webkit-transform: translateY(-4px); opacity: 1; }
+        }
+        @-moz-keyframes scrollDown {
+            0% { -moz-transform: translateY(-4px); opacity: 1; }
+            50% { -moz-transform: translateY(4px); opacity: 0.5; }
+            100% { -moz-transform: translateY(-4px); opacity: 1; }
+        }
+        @-o-keyframes scrollDown {
+            0% { -o-transform: translateY(-4px); opacity: 1; }
+            50% { -o-transform: translateY(4px); opacity: 0.5; }
+            100% { -o-transform: translateY(-4px); opacity: 1; }
+        }
         @keyframes scrollDown {
             0% { transform: translateY(-4px); opacity: 1; }
             50% { transform: translateY(4px); opacity: 0.5; }
@@ -417,59 +469,93 @@
     </footer>
     
     <script>
-        window.addEventListener('load', function() {
+        // Try multiple event listeners to ensure script executes
+        function initializeAnimations() {
+            console.log("Initializing animations..."); // For debugging
+            
             const images = document.querySelectorAll(".carousel-image");
             const dots = document.querySelectorAll(".counter-dot");
             const content = document.querySelector(".content-container");
             const footer = document.querySelector("footer");
             let index = 0;
-
+    
             // Initialize carousel
             images.forEach((img, i) => {
                 img.style.opacity = i === 0 ? "1" : "0";
             });
-
+    
             function moveCarousel() {
                 // Fade out current image
-                images[index].style.opacity = "0";
-                dots[index].classList.remove("active");
+                if (images[index]) {
+                    images[index].style.opacity = "0";
+                    if (dots[index]) dots[index].classList.remove("active");
+                }
                 
                 // Update index and fade in next image
                 index = (index + 1) % images.length;
-                images[index].style.opacity = "1";
-                dots[index].classList.add("active");
+                if (images[index]) {
+                    images[index].style.opacity = "1";
+                    if (dots[index]) dots[index].classList.add("active");
+                }
             }
-
-            setInterval(moveCarousel, 3000);
+    
+            // Set interval only if images exist
+            if (images.length > 0) {
+                setInterval(moveCarousel, 3000);
+            }
             
             // Add click functionality to dots
             dots.forEach((dot, i) => {
                 dot.addEventListener("click", function() {
                     // Fade out current image
-                    images[index].style.opacity = "0";
-                    dots[index].classList.remove("active");
+                    if (images[index]) {
+                        images[index].style.opacity = "0";
+                        if (dots[index]) dots[index].classList.remove("active");
+                    }
                     
                     // Update index to clicked dot and fade in that image
                     index = i;
-                    images[index].style.opacity = "1";
-                    dots[index].classList.add("active");
+                    if (images[index]) {
+                        images[index].style.opacity = "1";
+                        if (dots[index]) dots[index].classList.add("active");
+                    }
                 });
             });
             
+            // Manually trigger animations for electric lines
+            const electricLines = document.querySelectorAll('.electric-line');
+            electricLines.forEach(line => {
+                // Force a reflow to ensure animation applies
+                line.style.animation = 'none';
+                void line.offsetWidth; // Trigger reflow
+                line.style.animation = 'flicker 2s infinite alternate ease-in-out, moveLines 6s infinite linear';
+            });
+            
+            // Manually trigger scroll animation
+            const scrollElement = document.querySelector('.scroll');
+            if (scrollElement) {
+                scrollElement.style.animation = 'none';
+                void scrollElement.offsetWidth; // Trigger reflow
+                scrollElement.style.animation = 'scrollDown 1.5s infinite ease-in-out';
+            }
+            
             // Scroll reveal functionality
             function revealOnScroll() {
-                const scrollPosition = window.scrollY;
+                const scrollPosition = window.scrollY || window.pageYOffset;
                 const triggerPoint = window.innerHeight / 1.5;
                 
-                const contentPosition = content.getBoundingClientRect().top + scrollPosition;
-                const footerPosition = footer.getBoundingClientRect().top + scrollPosition;
-                
-                if (scrollPosition > contentPosition - triggerPoint) {
-                    content.classList.add("visible");
+                if (content) {
+                    const contentPosition = content.getBoundingClientRect().top + scrollPosition;
+                    if (scrollPosition > contentPosition - triggerPoint) {
+                        content.classList.add("visible");
+                    }
                 }
                 
-                if (scrollPosition > footerPosition - triggerPoint) {
-                    footer.classList.add("visible");
+                if (footer) {
+                    const footerPosition = footer.getBoundingClientRect().top + scrollPosition;
+                    if (scrollPosition > footerPosition - triggerPoint) {
+                        footer.classList.add("visible");
+                    }
                 }
             }
             
@@ -480,13 +566,26 @@
             window.addEventListener('scroll', revealOnScroll);
             
             // Smooth scroll functionality
-            document.querySelector('.mouse-wrap').addEventListener('click', function() {
-                window.scrollTo({
-                    top: document.querySelector('.content-container').offsetTop - 50,
-                    behavior: 'smooth'
+            const mouseWrap = document.querySelector('.mouse-wrap');
+            if (mouseWrap && content) {
+                mouseWrap.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: content.offsetTop - 50,
+                        behavior: 'smooth'
+                    });
                 });
-            });
-        });
+            }
+        }
+    
+        // Try multiple event listeners to ensure script executes
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(initializeAnimations, 1);
+        } else {
+            document.addEventListener('DOMContentLoaded', initializeAnimations);
+        }
+        
+        // Backup execution
+        window.addEventListener('load', initializeAnimations);
     </script>
 </body>
 </html>
