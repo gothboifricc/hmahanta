@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>HM &mdash; Data Analysis of Failed Orders</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">  
+  <meta name="description" content=" ">
+  <meta name="keywords" content="html, css, javascript, jquery">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="css/vendor/icomoon/style.css">
+  <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/vendor/aos.css">
+  <link rel="stylesheet" href="css/vendor/animate.min.css">
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <style>
+    * {
+      font-family: "Raleway", sans-serif !important;
+    }
+  </style>
+  
+
+</head>
+
+<body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
+
+  <nav class="unslate_co--site-mobile-menu">
+    <div class="close-wrap d-flex">
+      <a href="#" class="d-flex ml-auto js-menu-toggle">
+        <span class="close-label">Close</span>
+        <div class="close-times">
+          <span class="bar1"></span>
+          <span class="bar2"></span>
+        </div>
+      </a>
+    </div>
+    <div class="site-mobile-inner"></div>
+  </nav>
+
+    <div class="unslate_co--site-wrap">
+        
+      <div class="unslate_co--site-inner">
+        <div class="lines-wrap">
+          <div class="lines-inner">
+            <div class="lines"></div>
+          </div>
+        </div>
+      <!--hm END vertical lines -->
+      <nav class="unslate_co--site-nav site-nav-target">
+
+        <div class="container">
+
+          <div class="row align-items-center justify-content-between text-left">
+            <div class="col-md-5 text-right">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li class="has-children">
+                  <a href="index.html#home-section" class="nav-link">Home</a>
+                </li>
+                <li><a href="index.html#portfolio-section" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html#about-section" class="nav-link">About</a></li>
+              </ul>
+            </div>
+            <div class="site-logo pos-absolute">
+              <a href="index.html" class="unslate_co--site-logo">HM<span>.</span></a>
+            </div>
+            <div class="col-md-5 text-right text-lg-left">
+              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
+                <li><a href="index.html#skills-section" class="nav-link">Skills</a></li>
+                <li><a href="index.html#journal-section" class="nav-link">My Posts</a></li>
+                <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+              </ul>
+
+              <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
+                <li><a href="#" class="js-menu-toggle">Menu</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+      </nav>
+      <!-- END nav -->
+
+      <div class="cover-v1 jarallax overlay" style="background-image: url('images/pf12/bg.jpg');">
+        <div class="container">
+          <div class="row align-items-center">
+
+            <div class="col-md-10 mx-auto text-center">
+              <h2 class="heading" data-aos="fade-up">Data Analysis of Failed Orders</h2>
+              <h2 class="subheading" data-aos="fade-up" data-aos-delay="100">A structured analysis using DAX calculations and data visualisation techniques.</h2>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- dov -->
+        <a href="#portfolio-single-section" class="mouse-wrap smoothscroll">
+          <span class="mouse">
+            <span class="scroll"></span>
+          </span>
+          <span class="mouse-label">Scroll</span>
+        </a>
+
+      </div>
+
+
+
+      <!-- END .cover-v1 -->
+
+      <div class="container">
+        <div class="portfolio-single-wrap unslate_co--section" id="portfolio-single-section">
+
+          <div class="portfolio-single-inner">
+            <h2 class="heading-portfolio-single-h2">Glance:</h2>
+            <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-md-11 col-lg-11 mx-auto"> <!-- Reduced column width and added mx-auto -->
+                  <div class="owl-carousel single-slider">
+                    <figure class="mb-1">
+                      <img src="images/pf12/1.jpg" alt="Image" class="img-fluid">
+                    </figure>
+                    <figure class="mb-1">
+                      <img src="images/pf12/2.jpg" alt="Image" class="img-fluid">
+                    </figure>
+                    <figure class="mb-1">
+                      <img src="images/pf12/3.jpg" alt="Image" class="img-fluid">
+                    </figure>
+                    <!-- other carousel items -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                    <!-- This part was edited to make it bloglike -->
+      <div class="unslate_co--section" id="blog-single-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <h2 class="mb-4">Introduction</h2><br>
+              <p>Download the dataset by clicking on the link below:
+                <br><br><a href="https://drive.google.com/drive/folders/1BtE0DTMjMAIDb_ksD4i_Ofj0tLinBylX?usp=sharing">Download Dataset</a><br><br>
+                This data project has been used as a take-home assignment in the recruitment process for the data science positions at Gett.
+                <br><br>Gett, previously known as GetTaxi, is an Israeli-developed technology platform solely focused on corporate Ground Transportation Management (GTM). They have an application where clients can order taxis, and drivers can accept their rides (offers). At the moment, when the client clicks the Order button in the application, the matching system searches for the most relevant drivers and offers them the order. In this task, we would like to investigate some matching metrics for orders that did not completed successfully, i.e., the customer didn't end up getting a car.
+              </p>
+              <br>
+  
+              <h2 class="mb-4">Tasks Assigned</h2><br>
+              <p>
+                <h3>1. Distribution of Orders by Failure Reason</h3>
+                <ul>
+                    <li>Build up distribution of orders according to reasons for failure: 
+                        <ul>
+                            <li>Cancellations before and after driver assignment.</li>
+                            <li>Reasons for order rejection.</li>
+                        </ul>
+                    </li>
+                    <li>Analyze the resulting plot.</li>
+                    <li>Identify which category has the highest number of orders.</li>
+                </ul>
+            
+                <h3>2. Failed Orders by Hour</h3>
+                <ul>
+                    <li>Plot the distribution of failed orders by hours.</li>
+                    <li>Check for trends showing an abnormally high proportion of failures in certain hours.</li>
+                    <li>Determine which hours have the highest failure rates and analyze possible reasons.</li>
+                </ul>
+            
+                <h3>3. Average Time to Cancellation</h3>
+                <ul>
+                    <li>Plot the average time to cancellation with and without a driver, categorized by hour.</li>
+                    <li>Remove any outliers from the dataset for better accuracy.</li>
+                    <li>Analyze the plot to draw meaningful conclusions.</li>
+                </ul>
+            
+                <h3>4. Distribution of Average ETA by Hour</h3>
+                <ul>
+                    <li>Plot the distribution of average Estimated Time of Arrival (ETA) by hours.</li>
+                    <li>Interpret the plot and explain observed patterns.</li>
+                </ul>
+              </p><br>
+              <h2>Data Description</h2>
+              <br>
+              <p>We have two datasets: <strong>data_orders</strong> and <strong>data_offers</strong>, both stored in CSV format.</p>
+              <br>
+              <h3>1. data_orders Dataset</h3>
+              <p>This dataset contains detailed order information with the following columns:</p>
+              <ul>
+                  <li><strong>order_datetime</strong> – Time of the order.</li>
+                  <li><strong>origin_longitude</strong> – Longitude of the order's origin.</li>
+                  <li><strong>origin_latitude</strong> – Latitude of the order's origin.</li>
+                  <li><strong>m_order_eta</strong> – Estimated time before order arrival.</li>
+                  <li><strong>order_gk</strong> – Unique order number.</li>
+                  <li><strong>order_status_key</strong> – Status of the order, mapped as follows:
+                      <ul>
+                          <li><strong>4</strong> – Cancelled by client.</li>
+                          <li><strong>9</strong> – Cancelled by system (rejected).</li>
+                      </ul>
+                  </li>
+                  <li><strong>is_driver_assigned_key</strong> – Indicates whether a driver has been assigned.</li>
+                  <li><strong>cancellation_time_in_seconds</strong> – Time (in seconds) before cancellation.</li>
+              </ul>
+          
+              <h3>2. data_offers Dataset</h3>
+              <p>A simple mapping dataset with two columns:</p>
+              <ul>
+                  <li><strong>order_gk</strong> – Order number, linked to the <em>data_orders</em> dataset.</li>
+                  <li><strong>offer_id</strong> – Unique offer ID.</li>
+              </ul>
+
+              <br><h2>Data Preparation</h2><br>
+              <p>We worked with two datasets: <strong>data_orders</strong> and <strong>data_offers</strong>. The primary dataset, <strong>data_orders</strong>, contained key columns such as order timestamps, order status, driver assignment status, and cancellation times. Before proceeding with analysis, we handled missing values and transformed necessary columns for meaningful insights.</p>
+              <br>
+              <h3>Handling Missing Data</h3>
+              <br>
+              <h4>m_order_eta (Estimated Time of Arrival):</h4>
+              <ul>
+                  <li>Replaced blank values with the average ETA for a more complete dataset.</li>
+                  <li>Alternatively, excluded blank values from calculations when necessary.</li>
+              </ul>
+              <pre style="background: rgb(26, 25, 25); border-bottom-color: initial; border-bottom-style: initial; border-image: initial; border-left-color: initial; border-left-style: initial; border-radius: 10px; border-right-color: initial; border-right-style: initial; border-top-color: rgb(75, 183, 255); border-top-style: solid; border-width: 5px 0px 0px; color: #fdff83; font-family: 'Courier New', Courier, monospace; font-stretch: inherit; font-variant-east-asian: inherit; font-variant-numeric: inherit; line-height: inherit; margin-bottom: 1.5em; margin-top: 0px; overflow-wrap: normal; overflow: auto; padding: 12px; vertical-align: baseline;"><span style="font-size: 13px;">Filled_m_order_eta = IF(ISBLANK(data_orders[m_order_eta]), AVERAGE(data_orders[m_order_eta]), data_orders[m_order_eta])</span></pre>
+              <h4>cancellation_time_in_seconds:</h4>
+              <ul>
+                  <li>Replaced blanks with 0, assuming an instant cancellation.</li>
+                  <li>Excluded blanks when calculating averages to avoid skewing results.</li>
+              </ul>
+              <pre style="background: rgb(26, 25, 25); border-top: 5px solid rgb(75, 183, 255); border-radius: 10px; color: #fdff83; font-family: 'Courier New', Courier, monospace; padding: 12px;"><span style="font-size: 13px;">Filled_Cancellation_Time = IF(ISBLANK(data_orders[cancellation_time_in_seconds]), 0, data_orders[cancellation_time_in_seconds])</span></pre>
+              <br>
+              <h2>Task 1: Distribution of Orders by Failure Reason</h2>
+              <br>
+              <p>To classify failure reasons, we created calculated columns using SWITCH(...) to handle multiple conditions.</p>
+              <br>
+              <pre style="background: rgb(26, 25, 25); border-top: 5px solid rgb(75, 183, 255); border-radius: 10px; color: #fdff83; font-family: 'Courier New', Courier, monospace; padding: 12px;"><span style="font-size: 13px;">reason_failure = SWITCH([order_status_key], 4, "Cancelled by Client", "Cancelled/Rejected by System")</span></pre>
+              <pre style="background: rgb(26, 25, 25); border-top: 5px solid rgb(75, 183, 255); border-radius: 10px; color: #fdff83; font-family: 'Courier New', Courier, monospace; padding: 12px;"><span style="font-size: 13px;">before_after_assigned = SWITCH([is_driver_assigned_key], 0, "NOT ASSIGNED", "WAS ASSIGNED")</span></pre>
+              <br>
+              <p>We visualised this data using a bar chart.</p>
+              <br><img src="images/pf12/4.jpg" alt="Image" class="img-fluid"><br><br>
+          
+              <p>Findings:</p>
+              <ul>
+                  <li>Most orders were cancelled by clients (~68% of total cancelled orders, i.e., 7307 orders).</li>
+                  <li>Out of these 7307 cancelled orders, ~39% had drivers assigned.</li>
+                  <li>System cancellations (~32% of total cancelled orders, i.e., 3406 orders) had no drivers assigned.</li>
+              </ul>
+              <br>
+              <h2>Task 2: Failed Orders by Hour</h2>
+              <br>
+              <p>We analyzed failure trends by extracting the hour from order_datetime using the HOUR(...) function in DAX.</p>
+              <br>
+              <pre style="background: rgb(26, 25, 25); border-top: 5px solid rgb(75, 183, 255); border-radius: 10px; color: #fdff83; font-family: 'Courier New', Courier, monospace; padding: 12px;"><span style="font-size: 13px;">Order_Hour = HOUR('data_orders'[order_datetime])</span></pre>
+              <br>
+              <p>We then plotted a line chart of cancelled orders by hour.</p>
+              <br><img src="images/pf12/5.jpg" alt="Image" class="img-fluid"><br><br>
+          
+              <p>Findings:</p>
+              <ul>
+                  <li>Highest failure rates occur between <strong>7-10 AM</strong> and <strong>8-12 PM</strong>, mainly due to client cancellations.</li>
+                  <li>System cancellations peak at <strong>3 AM</strong> and <strong>11 PM</strong>, likely due to system maintenance.</li>
+              </ul>
+              <br>
+              <h2>Task 3: Average Time to Cancellation</h2>
+              <br>
+              <p>We removed outliers and adjusted cancellation times using the following logic:</p>
+              <br>
+              <pre style="background: rgb(26, 25, 25); border-top: 5px solid rgb(75, 183, 255); border-radius: 10px; color: #fdff83; font-family: 'Courier New', Courier, monospace; padding: 12px;"><span style="font-size: 13px;">transformed_cancellation_time = IF(data_orders[cancellations_time_in_seconds] < 3, 0, data_orders[cancellations_time_in_seconds])</span></pre>
+              <br>
+              <p>We can use a bar chart to visualise this data, helping us determine patterns in cancellation timing.</p>
+              <br><img src="images/pf12/6.jpg" alt="Image" class="img-fluid"><br><br>
+              <p>Findings:</p>
+              <ul>
+                  <li>Highest average cancellation times occur at <strong>11 AM - 1 PM</strong>, with peaks at <strong>5 AM</strong> and <strong>8 PM</strong>.</li>
+                  <li>Shorter cancellation times during <strong>2-4 AM</strong> and <strong>9-11 PM</strong> indicate smoother operations.</li>
+              </ul>
+              <br>
+              <h2>Task 4: Distribution of ETA by Hour</h2>
+              <br>
+              <p>We analyzed ETA distributions and calculated adjusted values:</p>
+              <br>
+              <pre style="background: rgb(26, 25, 25); border-top: 5px solid rgb(75, 183, 255); border-radius: 10px; color: #fdff83; font-family: 'Courier New', Courier, monospace; padding: 12px;"><span style="font-size: 13px;">transformed_m_order_eta =<br>VAR AvgETA = CALCULATE(AVERAGE(data_orders[m_order_eta]), ALL(data_orders))<br>RETURN IF(data_orders[m_order_eta] < 60, AvgETA, data_orders[m_order_eta])</span></pre>
+              <br>
+              <p>Now we compare average ETA values across different hours using a line chart.</p>
+              <br><img src="images/pf12/7.jpg" alt="Image" class="img-fluid"><br><br>
+              <p>Findings:</p>
+              <ul>
+                  <li>Highest ETA occurs at <strong>8-9 AM</strong> and <strong>4-6 PM</strong> (peak traffic hours).</li>
+                  <li>Lowest ETA times are <strong>4-6 AM</strong>, <strong>10 AM-12 PM</strong>, and <strong>7-9 PM</strong>.</li>
+                  <li>Optimizing scheduling and routing during peak hours can reduce delays.</li>
+              </ul>
+
+              <br><h2 class="mb-4">Conclusion</h2><br>
+              <p>This approach allowed to uncover key insights into order failures. By using DAX Queries, handling missing data, and visualizing trends in Power BI, a deeper understanding of cancellation patterns and their potential causes was achieved. This methodology can be applied to similar datasets for further business intelligence applications.</p>
+              
+              
+              <div class="pt-5 categories_tags ">
+                <p>Tools Used:  <a href="https://www.microsoft.com/en-us/power-platform/products/power-bi">MS Power BI,</a> <a href="https://www.canva.com/about/">Canva</a><br><br>  Tags: <a href="https://www.google.com/search?q=Data+Analytics&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWILesWntDwf6YqRHVROt0pIghFftYA%3A1730125603596&ei=I58fZ9v5I9iVseMP0oKQ8AM&ved=0ahUKEwibl5OQpLGJAxXYSmwGHVIBBD4Q4dUDCA8&uact=5&oq=Data+Analytics&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIg5EYXRhIEFuYWx5dGljczIKECMYgAQYJxiKBTILEAAYgAQYkQIYigUyDhAAGIAEGJECGLEDGIoFMg4QABiABBiRAhixAxiKBTILEAAYgAQYkQIYigUyBRAAGIAEMgUQABiABDIFEAAYgAQyCBAAGIAEGLEDMgUQABiABEiGO1D6DViGOXABeAGQAQCYAbgCoAGQG6oBBjItMTQuMbgBA8gBAPgBAZgCDaACxBbCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICBxAAGIAEGArCAg0QABiABBixAxhDGIoFwgIKEAAYgAQYQxiKBcICCxAAGIAEGLEDGIoFwgIOEAAYgAQYsQMY8wUYiwPCAgsQABiABBixAxiLA8ICDhAAGIAEGLEDGIoFGIsDmAMAiAYBkAYKkgcIMS4wLjExLjGgB_ps&sclient=gws-wiz-serp">#dataanalytics</a> <a href="https://www.google.com/search?q=Data+Science&sca_esv=0d2d5197637c41d9&sxsrf=ADLYWIKXAtg9BF7Kxvige--PQhHG8l5wVQ%3A1730125592475&ei=GJ8fZ7ruG7aOseMP8cj48AU&ved=0ahUKEwi62uuKpLGJAxU2R2wGHXEkHl4Q4dUDCA8&uact=5&oq=Data+Science&gs_lp=Egxnd3Mtd2l6LXNlcnAiDERhdGEgU2NpZW5jZTIKECMYgAQYJxiKBTIKEAAYgAQYFBiHAjINEAAYgAQYsQMYQxiKBTIFEAAYgAQyCBAAGIAEGLEDMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI_RhQAFicEHAAeAGQAQCYAcUCoAHDBqoBBTItMi4xuAEDyAEA-AEBmAICoAKeBJgDAJIHAzItMqAH3hU&sclient=gws-wiz-serp">#datascience</a></p>
+              </div>
+              <br>
+              <div class="post-single-navigation d-flex align-items-stretch">
+                <a href="portfolio-single-11.html" class="mr-auto w-40 pr-4">
+                  <span class="d-block">Previous Project</span>
+                  GarudoMail App: Eases Job Application Process
+                </a>
+                <a href="portfolio-single-1.html" class="ml-auto w-40 text-right pl-4">
+                  <span class="d-block">Next Project</span>
+                  Census 2011 Data Analysis & Insights
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Edited till here personally -->
+  
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="unslate_co--footer unslate_co--section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+
+            <div class="footer-site-logo"><a href="#">HM<span>.</span></a></div>
+
+            <ul class="footer-site-social">
+              <li><a href="www.linkedin.com/in/jagjit-k-55b028256">LinkedIn</a></li>
+              <li><a href="https://github.com/gothboifricc">Github</a></li>
+            </ul>
+
+            <p class="site-copyright">
+                
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="icon-heart"
+                  aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              
+              </p>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Loader -->
+  <div id="unslate_co--overlayer"></div>
+  <div class="site-loader-wrap">
+    <div class="site-loader"></div>
+  </div>
+
+  <script src="js/scripts-dist.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
